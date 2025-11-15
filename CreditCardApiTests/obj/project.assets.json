@@ -2561,11 +2561,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wangl\\source\\repos\\CreditCardApi\\CreditCardApiTests\\CreditCardApi.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\wangl\\source\\repos\\Assignment_CreditCardApi\\CreditCardApiTests\\CreditCardApi.Tests.csproj",
       "projectName": "CreditCardApi.Tests",
-      "projectPath": "C:\\Users\\wangl\\source\\repos\\CreditCardApi\\CreditCardApiTests\\CreditCardApi.Tests.csproj",
+      "projectPath": "C:\\Users\\wangl\\source\\repos\\Assignment_CreditCardApi\\CreditCardApiTests\\CreditCardApi.Tests.csproj",
       "packagesPath": "C:\\Users\\wangl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wangl\\source\\repos\\CreditCardApi\\CreditCardApiTests\\obj\\",
+      "outputPath": "C:\\Users\\wangl\\source\\repos\\Assignment_CreditCardApi\\CreditCardApiTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\wangl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2582,8 +2582,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\wangl\\source\\repos\\CreditCardApi\\CreditCardApi\\CreditCardApi.csproj": {
-              "projectPath": "C:\\Users\\wangl\\source\\repos\\CreditCardApi\\CreditCardApi\\CreditCardApi.csproj"
+            "C:\\Users\\wangl\\source\\repos\\Assignment_CreditCardApi\\CreditCardApi\\CreditCardApi.csproj": {
+              "projectPath": "C:\\Users\\wangl\\source\\repos\\Assignment_CreditCardApi\\CreditCardApi\\CreditCardApi.csproj"
             }
           }
         }

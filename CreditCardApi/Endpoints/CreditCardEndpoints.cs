@@ -1,6 +1,7 @@
 using CreditCardApi.DTOs;
 using CreditCardApi.Interface;
 using CreditCardApi.Utils;
+using CreditCardApi.Models;
 using Microsoft.AspNetCore.Routing.Tree;
 
 namespace CreditCardApi.Endpoints;
@@ -38,9 +39,7 @@ public static class CreditCardEndpoints
     /// <param name="service">Interface ICreditCardService instance used to access credit card business logic and data</param>
     /// <returns>All credit card entity</returns>
     private static async Task<IResult> GetAllCards(ICreditCardService service)
-    {
-        return Results.Ok(await service.GetAllAsync());
-    }
+        => Results.Ok((await service.GetAllAsync()).Select(ToResponseDto));
 
     /// <summary>
     /// Get api/cards/{id}
@@ -49,9 +48,38 @@ public static class CreditCardEndpoints
     /// <param name="service">Interface ICreditCardService instance used to access credit card business logic and data</param>
     /// <returns>A credit card entity if found; otherwise, NotFound result</returns>
     private static async Task<IResult> GetCardById(int id, ICreditCardService service)
+        =>(await service.GetByIdAsync(id)) is {} card
+        ? Results.Ok(ToResponseDto(card))
+        : Results.NotFound();
+    
+    /// <summary>
+    /// Encapsulate the parameters into ToResponseDto
+    /// </summary>
+    /// <param name="card">Credit model</param>
+    /// <returns></returns>
+    private static CreditCardResponseDto ToResponseDto(CreditCard card)
     {
-        var card = await service.GetByIdAsync(id);
-        return card is null? Results.NotFound(): Results.Ok(card);
+        return new CreditCardResponseDto
+        {
+            Id = card.Id,
+            CardHolder = card.CardHolder,
+            Expiry = card.Expiry,
+            MaskedNumber = Mask(card.EncryptedNumber)
+        };
     }
 
+    /// <summary>
+    /// Mask cark nuber
+    /// </summary>
+    /// <param name="encryptedCardNumber"> Encrypted number</param>
+    /// <returns> Part of card number</returns>
+    private static string Mask(string encryptedCardNumber)
+    {
+        var raw = EncryptionHelper.Decrypt(encryptedCardNumber);
+
+        if (raw.Length <= 4)
+            return raw;
+
+        return new string('*', raw.Length - 4) + raw[^4..];
+    }
 }

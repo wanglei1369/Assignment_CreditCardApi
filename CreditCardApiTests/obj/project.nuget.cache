@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E7pCw0IaNw0=",
+  "dgSpecHash": "6cN1MFRokH0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\wangl\\source\\repos\\CreditCardApi\\CreditCardApiTests\\CreditCardApi.Tests.csproj",
+  "projectFilePath": "C:\\Users\\wangl\\source\\repos\\Assignment_CreditCardApi\\CreditCardApiTests\\CreditCardApi.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wangl\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\wangl\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.17\\microsoft.aspnetcore.openapi.8.0.17.nupkg.sha512",
